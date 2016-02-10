@@ -204,6 +204,9 @@ declare namespace __React {
     //
     // Event System
     // ----------------------------------------------------------------------
+    interface InputEventTarget extends EventTarget {
+        value: any;
+    }
 
     interface SyntheticEvent {
         bubbles: boolean;
@@ -237,6 +240,7 @@ declare namespace __React {
     }
 
     interface FormEvent extends SyntheticEvent {
+        target: InputEventTarget;
     }
 
     interface KeyboardEvent extends SyntheticEvent {
